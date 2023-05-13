@@ -3,9 +3,10 @@ import Link from 'next/link';
 import type { BasePokemon } from '~/utils/fetchers';
 import styles from './pokemon.module.css';
 
-type PokemonViewProps = Pick<BasePokemon, 'name' | 'spriteUrl'>;
-
-const PokemonView = ({ name, spriteUrl }: PokemonViewProps) => {
+const PokemonView = ({
+  name,
+  spriteUrl,
+}: Pick<BasePokemon, 'name' | 'spriteUrl'>) => {
   return (
     <Link href={`/pokemon/${name}`} className={styles.card}>
       <h2>{name}</h2>
@@ -14,11 +15,7 @@ const PokemonView = ({ name, spriteUrl }: PokemonViewProps) => {
   );
 };
 
-type PokemonGridProps = {
-  pokemon: Array<BasePokemon>;
-};
-
-export const PokemonGrid = ({ pokemon }: PokemonGridProps) => {
+export const PokemonGrid = ({ pokemon }: { pokemon: BasePokemon[] }) => {
   return (
     <ul className={styles.grid}>
       {pokemon.map(({ id, name, spriteUrl }) => {
