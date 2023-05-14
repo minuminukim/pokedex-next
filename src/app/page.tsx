@@ -1,4 +1,4 @@
-import { fetchGenerationOne, type BasePokemon } from '~/utils/fetchers';
+import { fetchGenerationOne } from '~/utils/fetchers';
 import { PokemonGrid } from './_components/pokemon';
 import styles from './page.module.css';
 

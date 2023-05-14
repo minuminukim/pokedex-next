@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { fetchPokemonByName } from '~/utils/fetchers';
-import styles from './page.module.css';
 
 export default async function PokemonPage({
   params,
@@ -20,7 +19,7 @@ export default async function PokemonPage({
       />
       <section>
         <h2>Stats</h2>
-        <ul className={styles.graph}>
+        <ul>
           {pokemon.stats.map(({ name, value }) => {
             return (
               <li key={name}>
